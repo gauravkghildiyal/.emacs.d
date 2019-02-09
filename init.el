@@ -11,6 +11,7 @@
  '(ansi-term-color-vector
    [unspecified "#14191f" "#d15120" "#81af34" "#deae3e" "#7e9fc9" "#a878b5" "#7e9fc9" "#dcdddd"] t)
  '(auto-save-default nil)
+ '(c-offsets-alist (quote ((inlambda . 0))))
  '(column-number-mode t)
  '(custom-enabled-themes (quote (atom-one-dark)))
  '(custom-safe-themes
@@ -114,10 +115,6 @@
 (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
-;;For TCEmacs
-(gnuserv-start)
-(load-library "/home/thekid/Programs/topcoder_app/tc_emacs-0.2/topcoder.el")
-
 ;;c++-sport-mode
 (load-library "/home/thekid/.emacs.d/c++-sport-mode.el")
 (add-hook 'c++-mode 'c++-sport-mode)
@@ -131,3 +128,17 @@
               "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;;radare2 development settings
+(c-add-style "radare2"
+             '((c-basic-offset . 4)
+               (tab-width . 4)
+               (indent-tabs-mode . t)
+               (put 'c-auto-align-backslashes 'safe-local-variable 'booleanp)
+               (c-auto-align-backslashes . nil)
+               (c-offsets-alist
+                (arglist-intro . ++)
+                (arglist-cont . ++)
+                (arglist-cont-nonempty . ++)
+                (statement-cont . ++)
+                )))
