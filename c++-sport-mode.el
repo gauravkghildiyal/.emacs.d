@@ -9,7 +9,7 @@
   (interactive)
   (delete-other-windows)
   (save-buffer)
-  (compile (concat "g++ -std=c++14 -g -Werror -DLOCAL -O2 -o " (file-name-sans-extension buffer-file-name) " " buffer-file-name)))
+  (compile (concat "g++ -std=c++14 -Werror -DLOCAL -O2 -o " (file-name-sans-extension buffer-file-name) " " buffer-file-name)))
 
 (defun debug-buffer()
   (interactive)
